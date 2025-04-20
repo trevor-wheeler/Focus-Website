@@ -1,15 +1,18 @@
 {
-  "name": "frontend",
+  "name": "focus-website",
   "private": true,
-  "version": "0.0.0",
+  "homepage": "https://trevor-wheeler.github.io/Focus-Website/",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "motion": "^12.7.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
