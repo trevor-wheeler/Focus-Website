@@ -18,6 +18,10 @@ export default function App() {
   );
 }
 
+function openchromepage() {
+  window.open("https://chromewebstore.google.com/detail/focus-short-form-content/bbobcnmcegmkheaimcepkmcmnaaomagn", "_blank");
+}
+
 function Home() {
   const [scale, setScale] = useState(1);
 
@@ -78,7 +82,7 @@ function Home() {
                 scale: 1.03,
               }}
             >
-              <button className='download-btn'><span className='gradient-text'>Download for Chrome</span></button>
+              <button onClick={openchromepage} className='download-btn'><span className='gradient-text'>Download for Chrome</span></button>
             </motion.div>
           </motion.div>
           <div className='feature-spacer'></div>
