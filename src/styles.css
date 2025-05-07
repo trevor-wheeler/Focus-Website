@@ -596,8 +596,6 @@ nav {
     height: 100vh;
     background-color: #fff;
     position: relative;
-    overflow-y: overlay;
-    scrollbar-gutter: stable;
 }
 
 
@@ -736,6 +734,14 @@ nav {
 
     .home2-main {
         padding-bottom: 20px;
+    }
+
+    .home2-title {
+        font-size: 32px !important;
+    }
+
+    .home2-section {
+        padding-top: 3.1rem;
     }
 }
 
