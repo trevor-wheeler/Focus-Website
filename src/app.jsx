@@ -114,9 +114,10 @@ function Home2() {
     <div className='home2-container'>
       <motion.div className='home2-header'
         initial={{ height: '0px' }}
-        animate={{ height: '400px' }}
+        animate={{ height: window.matchMedia("(max-width: 600px)").matches ? '315px' : '400px' }}
         transition={{ height: { type: "spring", bounce: 0.2 } }}
       >
+        <div className='home2-header-content'>
         <motion.div className='home2-title-container'
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -179,6 +180,7 @@ function Home2() {
             </div>
           </div>
         </motion.div>
+        </div>
       </motion.div>
 
       <main className='home2-main' ref={scrollRef}>
@@ -189,7 +191,7 @@ function Home2() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ scale: { type: "spring", bounce: 0.35, delay: 0.4 }, opacity: { delay: 0.4} }}
             >
-              { userCount ? <><GetUserCount count2={userCount}/><h4 style={{fontSize: '1.3rem'}}>&nbsp;active users</h4></> : ""}
+              { userCount ? <><GetUserCount count2={userCount}/><h4 style={{fontSize: '1.3rem'}}>&nbsp;active users</h4></> : <h4 style={{fontSize: '1.3rem'}}>0&nbsp;active users</h4>}
             </motion.span>
             <motion.img
               className='home2-download-btn'

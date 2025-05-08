@@ -1,5 +1,11 @@
 /* Fonts */
 
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font-size: 16px !important;
+}
+
 h1 {
     letter-spacing: 0px;
     font-family: "Outfit", sans-serif;
@@ -706,17 +712,20 @@ nav {
     margin-top: 10px;
 }
 
+.home2-header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width: 600px) {
     .home2-content {
         zoom: 0.8;
     }
 
-    .home2-header {
-        zoom: 0.8;
-    }
-
     .home2-download-links {
-        margin-top: 15px !important;
+        margin-top: 10px !important;
+        margin-bottom: 25px !important;
     }
 
     .home2-features-container {
@@ -732,16 +741,24 @@ nav {
         zoom: 1.1;
     }
 
+    .home2-header-content {
+        transform: scale(0.8) translateY(-14%);
+    }
+
     .home2-main {
         padding-bottom: 20px;
     }
 
-    .home2-title {
-        font-size: 20px !important;
-    }
-
     .home2-section {
         padding-top: 3.1rem;
+    }
+
+    .home2-title {
+        font-size: 2rem;
+    }
+
+    .gradient {
+        width: 40px;
     }
 }
 
