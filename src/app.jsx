@@ -247,13 +247,21 @@ function Home2() {
           <motion.h4 className='home2-heading text1'
             initial={{ x: -50, opacity: 0, width: '0px' }}
             animate={{ x: 0, opacity: 1, width: 'fit-content' }}
-            transition={{ x: {delay: 0.3}, opacity: {delay: 0.3}, width: { delay: 0.5, duration: 0.2 } }}
+            transition={{ x: {delay: 0.3}, opacity: {delay: 0.3}, width: { delay: 0.5, duration: 0.1 } }}
           >
             What is Focus?
           </motion.h4>
           
           <div className='home2-paragraph text2'><AnimatedText delay={300} text="Focus is a browser extension that lets you hide Reels and Shorts from YouTube, Instagram, and FaceBook, directing your focus  toward more meaningful, long-form content. Whether you're looking to remove Reels, hide Shorts, or just spend less time on social media, Focus can do it all across multiple websites." /></div>
           </section>
+
+          <motion.section style={{marginTop: '0px', marginBottom: '-20px', display: 'flex', justifyContent: 'center'}}
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0, 0.71, 0.2, 1.01] }}
+          >
+              <img src="/mockup.png" alt="mockup" className='home2-mockup-image'/>
+          </motion.section>
           
           <section className='home2-section'>
           <motion.h4 className='home2-heading text1'

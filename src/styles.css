@@ -648,6 +648,7 @@ nav {
     max-width: 720px;
     min-width: 100px;
     margin: 30px;
+    overflow-x: hidden;
 }
 
 .home2-section {
@@ -760,6 +761,16 @@ nav {
     .gradient {
         width: 40px;
     }
+
+    .home2-mockup-image {
+        width: 150% !important;
+    }
+    
+}
+
+.home2-mockup-image {
+    transform: translateX(-5px);
+    width: 100%;
 }
 
 .home2-feature-list{
