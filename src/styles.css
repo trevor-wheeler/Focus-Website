@@ -815,7 +815,7 @@ nav {
 
 
 
-.small-promo-tile-bg {
+.small-promo-tile-bg, .small-promo-tile-bg2 {
     margin-top: 65px;
     width: 440px !important;
     height: 280px !important;
@@ -826,6 +826,7 @@ nav {
     justify-content: center;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
 .small-promo-tile-bg::before {
