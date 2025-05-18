@@ -50,15 +50,6 @@ body {
     height: 100%;
 }
 
-nav {
-    width: 100%;
-    height: 70px;
-    background-color: #efefef;
-    position: absolute;
-    padding: 10px;
-    z-index: 2;
-}
-
 .nav-icons {
     margin: 0;
     padding: 0;
@@ -86,9 +77,9 @@ nav {
     position: relative;
     width: 428px;
     height: fit-content;
-    background-image: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
     border-radius: 20px;
-    padding: 3px;
+    padding: 0px;
+    box-shadow: 0 2px 10px #0000005c;
 }
 
 .privacy-border {
@@ -96,16 +87,16 @@ nav {
     width: 428px;
     height: fit-content;
     border-radius: 20px;
-    padding: 3px;
+    padding: 5px;
 }
 .tos-border::after {
     position: absolute;
-    top: 3px;
-    left: 3px;
-    border-radius: 17px;
+    top: 5px;
+    left: 5px;
+    border-radius: 20px;
     content: "";
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
     background-color: #ffffff;
     z-index: -1;
 }
@@ -115,8 +106,8 @@ nav {
     height: 480px;
     background-color: #fff;
     position: relative;
-    border-top-left-radius: 17px;
-    border-top-right-radius: 17px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     box-sizing: content-box;
     overflow-x: hidden;
 }
@@ -125,7 +116,7 @@ nav {
     width: 100%;
     height: 480px;
     position: relative;
-    border-radius: 17px;
+    border-radius: 15px;
     box-sizing: content-box;
     overflow-x: hidden;
 }
@@ -138,7 +129,6 @@ nav {
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding-top: 25px;
 }
 
 .tos-paragraphs {
@@ -168,8 +158,8 @@ nav {
     width: 100%;
     height: 85px;
     background-color: #efefef;
-    border-bottom-left-radius: 17px;
-    border-bottom-right-radius: 17px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     position: relative;
     overflow-x: hidden;
 }
@@ -218,7 +208,7 @@ nav {
 }
 
 #agree-btn {
-    background: linear-gradient(145deg, #e94d8e, #6228d7);
+    background: linear-gradient(145deg,#f9ce34,#ee2a7b,#6228d7);
     color: #fff;
     width: 100%;
 }
@@ -264,9 +254,13 @@ nav {
 .tos-heading {
     width: 100%;
     text-align: center;
-    margin-bottom: 30px;
-    font-weight: 600;
-    letter-spacing: -1px;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding-block: 28px;
+    background: #fff;
+    color: #1e1f22;
+    margin: 0;
 }
 
 #tos-divider {
@@ -350,7 +344,7 @@ nav {
     top: 4px !important;
     width: 100% !important;
     height: 25px !important;
-    background: linear-gradient(145deg, #e94d8e, #6228d7) !important;
+    background: linear-gradient(-45deg, #f9ce34, #ee2a7b) !important;
     border-radius: 50px !important;
     z-index: 0 !important;
 }
@@ -617,6 +611,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 2px 10px #0000005c;
 }
 
 .home2-title-container {
@@ -638,17 +633,17 @@ nav {
 
 .home2-main {
     width: 100%;
-    overflow-y: none;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
 }
 
 .home2-content {
-    max-width: 720px;
+    width: fit-content;
     min-width: 100px;
     margin: 30px;
-    overflow-x: hidden;
+    margin-top: 0px;
 }
 
 .home2-section {
@@ -723,10 +718,14 @@ nav {
     .home2-content {
         zoom: 0.8;
     }
-
-    .home2-download-links {
-        margin-top: 10px !important;
-        margin-bottom: 25px !important;
+    .home2-motd {
+        height: 200px !important;
+        overflow-x: hidden;
+    }
+    .home2-heading-main {
+        font-size: 35px !important;
+        width: 365px !important;
+        margin-top: 15px;
     }
 
     .home2-features-container {
@@ -748,10 +747,15 @@ nav {
 
     .home2-main {
         padding-bottom: 20px;
+        overflow-x: none;
+    }
+    .home2-content {
+        overflow-x: none;
     }
 
     .home2-section {
         padding-top: 3.1rem;
+        margin-top: 30px;
     }
 
     .home2-title {
@@ -764,6 +768,10 @@ nav {
 
     .home2-mockup-image {
         width: 150% !important;
+    }
+
+    .home2-header {
+        box-shadow: none;
     }
     
 }
@@ -801,11 +809,112 @@ nav {
     gap: 0.9em;
     position: relative;
     height: 140px;
-    margin-top: 35px;
 }
 
+#navbar {
+    width: 100%;
+    height: 30px;
+    background-color: #343a40;
+    box-shadow: 0 2px 10px #0000005c;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 
+.home2-motd {
+    width: 100%;
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.home2-heading-main {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 329px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 0.9em;
+    letter-spacing: -2px;
+    overflow-x: none;
+}
+
+#home2-sidebyside-content {
+    display: flex;
+    gap: 45px;
+    overflow-x: none;
+}
+
+#home2-left-panel {
+    width: 650px;
+    overflow-x: none;
+}
+
+#home2-right-panel {
+    width: 245px;
+}
+
+.website-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    letter-spacing: -1px;
+    
+}
+
+.home2-update {
+    border-radius: 15px;
+}
+
+.home2-update-heading {
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.home2-update-date {
+    font-size: 1rem;
+    position: absolute;
+    right: 0px;
+    bottom: 3px;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+.update-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 25px;
+    width: fit-content;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.1rem;
+    line-height: 1.2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.update-item {
+    padding-block: 0.5em;
+    padding-inline: 5px;
+}
 
 
 

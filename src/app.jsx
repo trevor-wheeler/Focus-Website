@@ -3,7 +3,6 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { animate, motion, useMotionValue, useTransform } from "motion/react"
 import { delay } from 'motion';
 import { div } from 'motion/react-client';
-import html2canvas from 'html2canvas';
 
 export default function App() {
 
@@ -184,13 +183,23 @@ function Home2() {
         </div>
       </motion.div>
 
+
       <main className='home2-main' ref={scrollRef}>
         <div className='home2-content'>
+          <section className='home2-motd'>
+            <motion.h1 className='home2-heading-main text1'
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ scale: { type: "spring", bounce: 0.15, delay: 0.4 }, opacity: { delay: 0.4} }}
+            >
+              Like AdBlock but for short-form content.
+            </motion.h1>
+          </section>
           <section className='home2-download-links'>
             <motion.span className='home2-heading-alt text1'
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ scale: { type: "spring", bounce: 0.35, delay: 0.4 }, opacity: { delay: 0.4} }}
+              transition={{ scale: { type: "spring", bounce: 0.35, delay: 0.6 }, opacity: { delay: 0.6} }}
             >
               { userCount ? <><GetUserCount count2={userCount}/><h4 style={{fontSize: '1.3rem'}}>&nbsp;active users</h4></> : <h4 style={{fontSize: '1.3rem'}}>0&nbsp;active users</h4>}
             </motion.span>
@@ -227,10 +236,10 @@ function Home2() {
                 scale: 1.03,
               }}
             />
-            <motion.img
+                        <motion.img
               className='home2-download-btn'
-              src="/edge_128x128.png" 
-              alt="Download for Edge"
+              src="/safari_128x128.png" 
+              alt="Download for Safari"
               onClick={() => alert("Coming soon!")}
               initial={{ y: 50, opacity: 0, scale: 1 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -243,92 +252,162 @@ function Home2() {
                 scale: 1.03,
               }}
             />
+            <motion.img
+              className='home2-download-btn'
+              src="/edge_128x128.png" 
+              alt="Download for Edge"
+              onClick={() => alert("Coming soon!")}
+              initial={{ y: 50, opacity: 0, scale: 1 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{ y: { type: "spring", bounce: 0.5, delay: 0.5 }, opacity: { duration: 0.1, delay: 0.5 }, scale: {duration: 0.1} }}
+              whileHover={{ 
+                scale: 1.07,
+                transition: { duration: 0.1 }
+              }}
+              whileTap={{ 
+                scale: 1.03,
+              }}
+            />
           </section>
-          <section className='home2-section'> 
-          <motion.h4 className='home2-heading text1'
-            initial={{ x: -50, opacity: 0, width: '0px' }}
-            animate={{ x: 0, opacity: 1, width: 'fit-content' }}
-            transition={{ x: {delay: 0.3}, opacity: {delay: 0.3}, width: { delay: 0.5, duration: 0.1 } }}
-          >
-            What is Focus?
-          </motion.h4>
-          
-          <div className='home2-paragraph text2'><AnimatedText delay={300} text="Focus is a browser extension that lets you hide Reels and Shorts from YouTube, Instagram, and FaceBook, directing your focus  toward more meaningful, long-form content. Whether you're looking to remove Reels, hide Shorts, or just spend less time on social media, Focus can do it all across multiple websites." /></div>
-          </section>
+          <div id='home2-sidebyside-content'>
+            <div id='home2-left-panel'>
+              <section className='home2-section'> 
+                <motion.h4 className='home2-heading text1'
+                  initial={{ x: -50, opacity: 0, width: '0px' }}
+                  animate={{ x: 0, opacity: 1, width: 'fit-content' }}
+                  transition={{ x: {delay: 0.3}, opacity: {delay: 0.3}, width: { delay: 0.5, duration: 0.1 } }}
+                >
+                  What is Focus?
+                </motion.h4>
 
-          {/*
-          <motion.section style={{marginTop: '0px', marginBottom: '-20px', display: 'flex', justifyContent: 'center'}}
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0, 0.71, 0.2, 1.01] }}
-          >
-              <img src="/mockup.png" alt="mockup" className='home2-mockup-image'/>
-          </motion.section>
-          */}
+                <div className='home2-paragraph text2'><AnimatedText delay={300} text="Focus is a browser extension that lets you hide Reels and Shorts from YouTube, Instagram, and FaceBook, directing your focus  toward more meaningful, long-form content. Whether you're looking to remove Reels, hide Shorts, or just spend less time on social media, Focus can do it all across multiple websites." /></div>
+                </section>
 
-          <section className='home2-section'>
-          <motion.h4 className='home2-heading text1'
-            initial={{ x: -50, opacity: 0, width: '0px' }}
-            animate={{ x: 0, opacity: 1, width: 'fit-content' }}
-            transition={{ x: {delay: 0.5}, opacity: {delay: 0.5}, width: { delay: 0.7, duration: 0.2 } }}
-          >
-            Included Features
-          </motion.h4>
+                {/*
+                <motion.section style={{marginTop: '0px', marginBottom: '-20px', display: 'flex', justifyContent: 'center'}}
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.4, ease: [0, 0.71, 0.2, 1.01] }}
+                >
+                    <img src="/mockup.png" alt="mockup" className='home2-mockup-image'/>
+                </motion.section>
+                */}
 
-          <div className='home2-features-container'>
-            <motion.div className='home2-feature'
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ x: { type: "spring", bounce: 0.5, delay: 0.6 }, opacity: { duration: 0.1, delay: 0.6 } }}
-            >
-              <h4 className='feature-heading text1'><i className="feature-icon bi bi-youtube"></i>YouTube</h4>
-              <ul className='feature-list home2-feature-list text2'>
-                <li className='home2-feature-label'>Block Shorts</li>
-                <li className='home2-feature-label'>Hide Shorts page</li>
-                <li className='home2-feature-label'>Remove Shorts from search results</li>
-              </ul>
-            </motion.div>
-            <div className='feature-spacer'></div>
-            <motion.div className='home2-feature'
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ x: { type: "spring", bounce: 0.5, delay: 0.7 }, opacity: { duration: 0.1, delay: 0.7 } }}
-            >
-              <h4 className='feature-heading text1'><span className='gradient'><i className="feature-icon bi bi-instagram"></i></span>Instagram</h4>
-              <ul className='feature-list home2-feature-list text2'>
-                <li className='home2-feature-label'>Block Reels</li>
-                <li className='home2-feature-label'>Hide Reels page</li>
-                <li className='home2-feature-label'>Hide Explore page</li>
-                <li className='home2-feature-label'>Blur Reels in DMs</li>
-              </ul>
-            </motion.div>
-            <div className='feature-spacer'></div>
-            <motion.div className='home2-feature'
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ x: { type: "spring", bounce: 0.5, delay: 0.8 }, opacity: { duration: 0.1, delay: 0.8 } }}
-            >
-              <h4 className='feature-heading text1'><i className="feature-icon bi bi-facebook"></i>Facebook</h4>
-              <ul className='feature-list home2-feature-list text2'>
-                <li className='home2-feature-label'>Block Reels</li>
-                <li className='home2-feature-label'>Hide Reels page</li>
-                <li className='home2-feature-label'>Blur Reels in Facebook Messenger</li>
-              </ul>
-            </motion.div>
+                <section className='home2-section'>
+                <motion.h4 className='home2-heading text1'
+                  initial={{ x: -50, opacity: 0, width: '0px' }}
+                  animate={{ x: 0, opacity: 1, width: 'fit-content' }}
+                  transition={{ x: {delay: 0.5}, opacity: {delay: 0.5}, width: { delay: 0.7, duration: 0.2 } }}
+                >
+                  Included Features
+                </motion.h4>
+                
+                <div className='home2-features-container'>
+                  <motion.div className='home2-feature'
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ x: { type: "spring", bounce: 0.5, delay: 0.6 }, opacity: { duration: 0.1, delay: 0.6 } }}
+                  >
+                    <h4 className='feature-heading text1'><i className="feature-icon bi bi-youtube"></i>YouTube</h4>
+                    <ul className='feature-list home2-feature-list text2'>
+                      <li className='home2-feature-label'>Block Shorts</li>
+                      <li className='home2-feature-label'>Hide Shorts page</li>
+                      <li className='home2-feature-label'>Remove Shorts from search results</li>
+                    </ul>
+                  </motion.div>
+                  <div className='feature-spacer'></div>
+                  <motion.div className='home2-feature'
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ x: { type: "spring", bounce: 0.5, delay: 0.7 }, opacity: { duration: 0.1, delay: 0.7 } }}
+                  >
+                    <h4 className='feature-heading text1'><span className='gradient'><i className="feature-icon bi bi-instagram"></i></span>Instagram</h4>
+                    <ul className='feature-list home2-feature-list text2'>
+                      <li className='home2-feature-label'>Block Reels</li>
+                      <li className='home2-feature-label'>Hide Reels page</li>
+                      <li className='home2-feature-label'>Hide Explore page</li>
+                      <li className='home2-feature-label'>Blur Reels in DMs</li>
+                    </ul>
+                  </motion.div>
+                  <div className='feature-spacer'></div>
+                  <motion.div className='home2-feature'
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ x: { type: "spring", bounce: 0.5, delay: 0.8 }, opacity: { duration: 0.1, delay: 0.8 } }}
+                  >
+                    <h4 className='feature-heading text1'><i className="feature-icon bi bi-facebook"></i>Facebook</h4>
+                    <ul className='feature-list home2-feature-list text2'>
+                      <li className='home2-feature-label'>Block Reels</li>
+                      <li className='home2-feature-label'>Hide Reels page</li>
+                      <li className='home2-feature-label'>Blur Reels in Facebook Messenger</li>
+                    </ul>
+                  </motion.div>
+                </div>
+                
+                </section>
+                
+                <section className='home2-section'>
+                <motion.h4 className='home2-heading text1'
+                  initial={{ x: -50, opacity: 0, width: '0px' }}
+                  animate={{ x: 0, opacity: 1, width: 'fit-content' }}
+                  transition={{ x: {delay: 0.7}, opacity: {delay: 0.7}, width: { delay: 0.9, duration: 0.2 } }}
+                >
+                  Privacy Focused
+                </motion.h4>
+                <div className='home2-paragraph text2'><AnimatedText delay={700} text="Focus does not collect any personally identifiable information from it's users. It only records whether a user has opted in to certain features by sending simple true/false values to a server. This data is used solely to track an anonymous opt-in status and improve user experience. No other data is collected, stored, or shared." /></div>
+              </section>
+            </div>
+            {/*
+            <div id='home2-right-panel'>
+
+              <section className='home2-section'> 
+                <motion.h4 className='home2-heading text1'
+                  initial={{ x: -50, opacity: 0, width: '0px' }}
+                  animate={{ x: 0, opacity: 1, width: 'fit-content' }}
+                  transition={{ x: {delay: 0.3}, opacity: {delay: 0.3}, width: { delay: 0.5, duration: 0.1 } }}
+                >
+                  Featured on
+                </motion.h4>
+                <ul className='website-list'>
+                  <li className='feature-heading'>Site 1</li>
+                  <li>Site 2</li>
+                  <li>Site 3</li>
+                  <li>Site 4</li>
+                </ul>
+              </section>
+
+              <section className='home2-section'> 
+                <motion.h4 className='home2-heading text1'
+                  initial={{ x: -50, opacity: 0, width: '0px' }}
+                  animate={{ x: 0, opacity: 1, width: 'fit-content' }}
+                  transition={{ x: {delay: 0.3}, opacity: {delay: 0.3}, width: { delay: 0.5, duration: 0.1 } }}
+                >
+                  Recent Updates
+                </motion.h4>
+                <div className='home2-update'>
+                  <h4 className='home2-update-heading'>v2.1.2 <span className='home2-update-date'>May 14th 2025</span></h4>
+                  <ul className='update-list'>
+                    <li className='update-item'>Fixed listing page screenshots</li>
+                    <li className='update-item'>Added metric tracking</li>
+                    <li className='update-item'>Tweaked Mellowtel configuration</li>
+                    <li className='update-item'>Added support for 10 new languages</li>
+                    <li className='update-item'>Added uninstall page</li>
+                  </ul>
+                </div>
+                <div className='home2-update'>
+                  <h4 className='home2-update-heading'>v2.1.2 <span className='home2-update-date'>May 14th 2025</span></h4>
+                  <ul className='update-list'>
+                    <li className='update-item'>Fixed listing page screenshots</li>
+                    <li className='update-item'>Added metric tracking</li>
+                    <li className='update-item'>Tweaked Mellowtel configuration</li>
+                    <li className='update-item'>Added support for 10 new languages</li>
+                    <li className='update-item'>Added uninstall page</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            */}
           </div>
-
-          </section>
-
-          <section className='home2-section'>
-          <motion.h4 className='home2-heading text1'
-            initial={{ x: -50, opacity: 0, width: '0px' }}
-            animate={{ x: 0, opacity: 1, width: 'fit-content' }}
-            transition={{ x: {delay: 0.7}, opacity: {delay: 0.7}, width: { delay: 0.9, duration: 0.2 } }}
-          >
-            Privacy policy
-          </motion.h4>
-          <div className='home2-paragraph text2'><AnimatedText delay={700} text="Focus does not collect any personally identifiable information from it's users. It only records whether a user has opted in to certain features by sending simple true/false values to a server. This data is used solely to track an anonymous opt-in status and improve user experience. No other data is collected, stored, or shared." /></div>
-          </section>
         </div>
       </main>
     </div>
@@ -648,7 +727,7 @@ function TOS() {
       >
         <div className='tos-background'>
           <div className='tos-page tos'>
-            <h4 className='tos-heading text1'>Terms of Service</h4>
+            <h4 className='tos-heading'>Terms of Service</h4>
             <div className='tos-paragraphs text2'>
               <p className='tos-paragraph'>This extension includes the open-source Mellowtel library. Mellowtel helps keep this service free and accessible to everyone.</p>
               <p className='tos-paragraph'>Before proceeding, please take a moment to review and agree to the following terms of service.</p>
@@ -658,7 +737,7 @@ function TOS() {
             </div>
           </div>
           <div className='settings-page tos'>
-            <h4 className='tos-heading text1'>Manage Settings</h4>
+            <h4 className='tos-heading'>Manage Settings</h4>
             <div className='tos-paragraphs text2'>
               <p className='tos-paragraph'>Mellowtel helps keep this extension free and available. You can decide to opt in or out whenever you want.</p>
               <div className='settings-paragraph'><i className="bi bi-router settings-icon text1"></i><p>Mellowtel shares a fraction of your unused bandwidth with trusted companies that use it to access the internet. A portion of the revenue is shared with this extension to keep it free and available.</p></div>
@@ -773,22 +852,9 @@ function Privacy() {
   );
 }
 
-function getpng() {
-  const element = document.getElementById('ss');
-
-  html2canvas(element, { backgroundColor: null }).then(canvas => {
-    const imgData = canvas.toDataURL('image/png');
-    const link = document.createElement('a');
-    link.href = imgData;
-    link.download = 'image.png';
-    link.click();
-  });
-}
-
 function Media() {
   return (
     <div className='media-page' style={{backgroundColor: '#fff', height: '3200px'}}>
-      <button onClick={getpng}></button>
       <div className='small-promo-tile-bg'>
           <div className='store-icon small-promo-tile-icon'>
             <svg width="86" viewBox="0, 0, 400,402.6845637583893"><g id="svgg"><path className="logo" id="path0" d="M98.409 1.321 C 51.683 8.366,14.219 43.572,3.130 90.858 C -1.063 108.738,-0.538 299.468,3.747 314.765 C 15.506 356.751,45.886 387.135,87.919 398.948 C 104.766 403.683,295.234 403.683,312.081 398.948 C 354.223 387.105,384.429 356.897,396.262 314.765 C 401.036 297.765,401.032 106.700,396.257 87.919 C 386.058 47.804,356.480 17.012,316.107 4.481 L 304.027 0.731 204.698 0.501 C 150.067 0.375,102.237 0.744,98.409 1.321 M245.132 65.436 L 266.916 102.013 218.916 102.013 L 170.915 102.013 149.216 66.059 C 137.281 46.284,127.517 29.665,127.517 29.129 C 127.517 28.593,149.079 28.313,175.432 28.507 L 223.348 28.859 245.132 65.436 M302.685 30.200 C 334.978 36.957,370.470 73.929,370.470 100.813 C 370.470 101.489,354.981 102.013,335.033 102.013 L 299.596 102.013 278.321 66.243 C 266.620 46.569,256.846 29.958,256.600 29.330 C 255.837 27.383,292.530 28.076,302.685 30.200 M116.886 66.779 L 138.235 102.013 83.882 102.013 C 50.515 102.013,29.530 101.522,29.530 100.740 C 29.530 78.602,56.784 45.444,84.352 34.042 C 95.012 29.634,93.390 28.001,116.886 66.779 M371.765 211.074 C 371.716 296.785,371.278 304.033,365.229 319.216 C 355.391 343.906,332.415 364.127,305.857 371.465 C 292.505 375.155,107.065 375.063,93.960 371.361 C 69.326 364.401,49.250 348.011,38.291 325.912 C 28.442 306.052,28.289 304.302,28.235 211.074 L 28.188 130.201 200.000 130.201 L 371.812 130.201 371.765 211.074 M191.275 155.110 C 189.799 155.452,185.268 156.377,181.208 157.167 C 119.990 169.071,88.385 249.486,124.817 300.650 C 127.327 304.175,127.470 305.213,126.085 309.837 C 122.790 320.834,132.819 330.913,143.787 327.627 C 148.614 326.180,149.702 326.453,161.379 332.041 C 242.219 370.722,325.151 288.019,286.516 207.249 L 280.674 195.035 283.407 189.511 C 290.003 176.179,277.503 163.693,264.167 170.291 C 258.645 173.023,258.620 173.023,254.904 170.377 C 239.761 159.594,206.446 151.601,191.275 155.110 M218.448 185.798 C 226.150 187.849,237.584 193.002,237.584 194.423 C 237.584 197.509,148.810 283.721,147.529 281.879 C 116.137 236.750,164.372 171.402,218.448 185.798 M263.287 226.253 C 282.565 279.972,228.554 329.403,175.224 306.848 L 169.911 304.601 214.113 260.384 C 238.424 236.065,258.789 216.642,259.370 217.222 C 259.950 217.802,261.713 221.866,263.287 226.253 " stroke="none" fill="#fff" fillRule="evenodd"></path></g></svg>
