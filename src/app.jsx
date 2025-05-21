@@ -223,7 +223,7 @@ function Home2() {
               className='home2-download-btn'
               src="/firefox_128x128.png" 
               alt="Download for Firefox"
-              onClick={() => alert("Coming soon!")}
+              onClick={() => window.open("https://addons.mozilla.org/addon/focus-remove-shorts-reels/", "_blank")}
               initial={{ y: 50, opacity: 0, scale: 1 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{ y: { type: "spring", bounce: 0.5, delay: 0.3 }, opacity: { duration: 0.1, delay: 0.3 }, scale: {duration: 0.1} }}
