@@ -256,7 +256,7 @@ function Home2() {
               className='home2-download-btn'
               src="/edge_128x128.png" 
               alt="Download for Edge"
-              onClick={() => alert("Coming soon!")}
+              onClick={() => window.open('https://microsoftedge.microsoft.com/addons/detail/plicpnabmdpgenmhkajnkdicjdoddofg', '_blank')}
               initial={{ y: 50, opacity: 0, scale: 1 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               transition={{ y: { type: "spring", bounce: 0.5, delay: 0.5 }, opacity: { duration: 0.1, delay: 0.5 }, scale: {duration: 0.1} }}
